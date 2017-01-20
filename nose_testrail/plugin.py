@@ -134,7 +134,7 @@ class NoseTestRail(Plugin):
         index = int(test_name.split('_')[-1])
         try:
             test_case_id = getattr(test_method, CASE_ID)
-            if type(test_case_id) != str:
+            if type(test_case_id) == list:
                 test_case_id =  test_case_id[index-1]
         except AttributeError:
             test_case_id = None
